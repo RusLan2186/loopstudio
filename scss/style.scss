@@ -106,9 +106,23 @@ a:hover {
    font-family: "Alata";
    color: #ffffff;
    line-height: 1.6;
-   &:hover {
-      background: url(../img/header/line.svg) center no-repeat;
-      padding-bottom: 40px;
+   transition: 0.3s all ease 0s;
+   position: relative;
+   &::after {
+      content: "";
+      position: absolute;
+      left: 10px;
+      bottom: -8px;
+      width: 24px;
+      height: 2px;
+      background-color: #ffffff;
+      transform: scale(0);
+      transform-origin: center;
+      transition: 0.3s all ease 0s;
+   }
+   &:hover::after {
+      transition: 0.3s all ease 0s;
+      transform: scale(1);
    }
    @media (max-width: 767.98px) {
       font-size: 24px;
@@ -196,30 +210,9 @@ a:hover {
    }
    @media (max-width: 549.98px) {
       font-size: 40px;
-      // width: 279px;
-      // padding: 26px 24px;
-      // margin: 0;
-      // line-height: 1.1;
    }
    @media (max-width: 365.98px) {
       padding: 26px 14px;
-   }
-}
-
-.header-block__background {
-   width: 100%;
-   padding-bottom: 10%;
-   @media (max-width: 767.98px) {
-      padding-bottom: 40%;
-   }
-   img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0;
-      object-fit: cover;
-      z-index: 5px;
    }
 }
 
@@ -351,11 +344,12 @@ a:hover {
    font-weight: 400;
    letter-spacing: 5px;
    color: #000000;
-   transition: 0.3s all ease 0s;
+   transition: 0.6s all ease 0s;
    text-transform: uppercase;
    &:hover {
       background: #000000;
       color: #ffffff;
+      transition: 0.6s all ease 0s;
    }
 }
 .creations__header_btn {
@@ -409,8 +403,9 @@ a:hover {
       top: 0;
       object-fit: cover;
       object-position: top;
+      transition: 0.3s all ease 0s;
       &:hover {
-         transform: scale(1.3);
+         transform: scale(1.1);
          transition: all 0.5s ease 0s;
          background-blend-mode: rgba(255, 255, 255, 0.75071);
       }
@@ -427,6 +422,7 @@ a:hover {
    font-size: 32px;
    // max-width: 106px;
    color: #ffffff;
+   transition: 0.6s all ease 0s;
    @media (max-width: 571.98px) {
       font-size: 24px;
       bottom: 20px;
@@ -434,7 +430,7 @@ a:hover {
    }
    &:hover {
       color: #000000;
-      transition: all 0.3s ease 0s;
+      transition: all 0.6s ease 0s;
       font-weight: 600;
    }
 }
