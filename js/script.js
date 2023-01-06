@@ -13,6 +13,7 @@ const headerLinks = document.querySelectorAll('.header__menu')
 headerLinks.forEach((el) => {
    el.addEventListener('click', () => {
       $('.header__burger,.header__menu').toggleClass('active');
+      $('body').toggleClass('lock');
    })
 })
 
@@ -30,3 +31,5 @@ $(window).scroll(function () { // Отслеживаем начало прокр
       $('.back-to-top').removeClass('active');
    }
 });
+
+
